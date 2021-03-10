@@ -12,11 +12,19 @@ struct DashboardVM {
     var wallet: String!
     
     var currentStatus: CurrentStatus! {
+        willSet {
+            // Store the actual values before to update for comparison
+            previousCurrentStatus = currentStatus
+        }
         didSet {
+            // Update the cached date the values have been updated
             let date = Date()
             UserDefaults.standard.setValue(date, forKey: UserDefaults.keys.lastFetch)
         }
     }
+    
+    // Need to store the previous status to draw and color the up/down/equal indicators
+    var previousCurrentStatus: CurrentStatus!
     
     /// The API updates the values every 6 minutes, makes no sense to call and get the same values than the last time
     var canFetchData: Bool {
@@ -42,30 +50,72 @@ struct DashboardVM {
     }
     
     var currentImage: UIImage? {
-        let image = UIImage(systemName: UserDefaults.images.arrowUp)?.withRenderingMode(.alwaysTemplate)
+        guard let previousCurrentStatus = previousCurrentStatus else {
+            return nil
+        }
+        var imageName = UserDefaults.images.arrowUp
+        if previousCurrentStatus.parameter?.currentHashrate ?? 0 > currentStatus.parameter?.currentHashrate ?? 0 {
+            imageName = UserDefaults.images.arrowDown
+        }
+        let image = UIImage(systemName: imageName)?.withRenderingMode(.alwaysTemplate)
         return image
     }
     
     var averageImage: UIImage? {
-        let image = UIImage(systemName: UserDefaults.images.arrowUp)?.withRenderingMode(.alwaysTemplate)
+        guard let previousCurrentStatus = previousCurrentStatus else {
+            return nil
+        }
+        var imageName = UserDefaults.images.arrowUp
+        if previousCurrentStatus.parameter?.averageHashrate ?? 0 > currentStatus.parameter?.averageHashrate ?? 0 {
+            imageName = UserDefaults.images.arrowDown
+        }
+        let image = UIImage(systemName: imageName)?.withRenderingMode(.alwaysTemplate)
         return image
     }
     
     var reportedImage: UIImage? {
-        let image = UIImage(systemName: UserDefaults.images.arrowUp)?.withRenderingMode(.alwaysTemplate)
+        guard let previousCurrentStatus = previousCurrentStatus else {
+            return nil
+        }
+        var imageName = UserDefaults.images.arrowUp
+        if previousCurrentStatus.parameter?.reportedHashrate ?? 0 > currentStatus.parameter?.reportedHashrate ?? 0 {
+            imageName = UserDefaults.images.arrowDown
+        }
+        let image = UIImage(systemName: imageName)?.withRenderingMode(.alwaysTemplate)
         return image
     }
     
     var currentImageTintColor: UIColor {
-        return UIColor.theBlue
+        guard let previousCurrentStatus = previousCurrentStatus else {
+            return .clear
+        }
+        var color = UIColor.theBlue
+        if previousCurrentStatus.parameter?.currentHashrate ?? 0 > currentStatus.parameter?.currentHashrate ?? 0 {
+            color = UIColor.theRed
+        }
+        return color
     }
     
     var averageImageTintColor: UIColor {
-        return UIColor.theBlue
+        guard let previousCurrentStatus = previousCurrentStatus else {
+            return .clear
+        }
+        var color = UIColor.theBlue
+        if previousCurrentStatus.parameter?.averageHashrate ?? 0 > currentStatus.parameter?.averageHashrate ?? 0 {
+            color = UIColor.theRed
+        }
+        return color
     }
     
     var reportedImageTintColor: UIColor {
-        return UIColor.theBlue
+        guard let previousCurrentStatus = previousCurrentStatus else {
+            return .clear
+        }
+        var color = UIColor.theBlue
+        if previousCurrentStatus.parameter?.reportedHashrate ?? 0 > currentStatus.parameter?.reportedHashrate ?? 0 {
+            color = UIColor.theRed
+        }
+        return color
     }
 }
 
