@@ -9,11 +9,17 @@ import UIKit
 import MBProgressHUD
 
 extension UIViewController {
+    
+    /// Convenient fuction to open the User settings
+    /// - Parameter sender: The same UIBarButtonItem tapped on the class
     func openUserSettings(_ sender: UIBarButtonItem) {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "UserSettings") as? UserSettings else { return }
-        present(vc, animated: true, completion: nil)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
+    
+    /// Convenient function to show an AlertController
+    /// - Parameter error: A string with the error description
     func showError(_ error: String) {
         let alert = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
         let ok = UIAlertAction(title: "Ok", style: .default) { action in
@@ -35,6 +41,7 @@ extension UIViewController {
             Indicator.show(animated: true)
         }
     }
+    
     func hideIndicator() {
         DispatchQueue.main.async {
             self.navigationController?.navigationBar.isUserInteractionEnabled = true

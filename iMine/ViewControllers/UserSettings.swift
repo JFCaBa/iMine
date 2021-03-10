@@ -20,6 +20,7 @@ class UserSettings: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDelegates()
+        populateData()
         setupUI()
     }
     
@@ -29,6 +30,10 @@ class UserSettings: UIViewController {
         if viewModel.isValidWalletAddress() {
             UserDefaults.standard.setValue(viewModel.wallet, forKey: UserDefaults.keys.wallet)
             UserDefaults.standard.synchronize()
+            dismiss(animated: true, completion: nil)
+        }
+        else {
+            showError("Wrong wallet address")
         }
     }
     
@@ -38,7 +43,14 @@ class UserSettings: UIViewController {
     }
     
     private func setupUI() {
-        
+
+    }
+    
+    private func populateData() {
+        if let wallet = UserDefaults.standard.value(forKey: UserDefaults.keys.wallet) as? String {
+            viewModel.wallet = wallet
+            txtWallet.placeholder = viewModel.wallet
+        }
     }
 }
 

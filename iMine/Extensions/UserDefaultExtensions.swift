@@ -16,4 +16,10 @@ extension UserDefaults {
         static let wallet = "USER_WALLET"
         static let lastFetch = "LAST_FETCH_DATA"
     }
+    
+    enum images {
+        static let arrowUp      = "arrow.up"
+        static let arrowDown    = "arrow.down"
+        static let equal        = "equal"
+    }
 }

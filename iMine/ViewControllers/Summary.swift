@@ -11,10 +11,14 @@ class Summary: UIViewController {
     // MARK: - Outlets
     // MARK: - Ivars
     // MARK: - ViewModels
+    var viewModel = DashboardVM()
     // MARK: - lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        // Get the previous fetched data from the Dashboard controller
+        if let dashboard = tabBarController?.viewControllers?[0] as? Dashboard {
+            viewModel = dashboard.viewModel
+        }
     }
     
     // MARK: - Actions
@@ -24,6 +28,10 @@ class Summary: UIViewController {
     
     // MARK: - Private
     private func setupUI() {
+        
+    }
+    
+    private func populateData() {
         
     }
 
