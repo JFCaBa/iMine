@@ -13,6 +13,7 @@ class Dashboard: UIViewController {
     @IBOutlet weak var lblAverage: UILabel!
     @IBOutlet weak var lblReported: UILabel!
     @IBOutlet weak var btnUserSettings: UIBarButtonItem!
+    @IBOutlet weak var btnReload: UIBarButtonItem!
     @IBOutlet weak var imgCurrent: UIImageView!
     @IBOutlet weak var imgAverage: UIImageView!
     @IBOutlet weak var imgReported: UIImageView!

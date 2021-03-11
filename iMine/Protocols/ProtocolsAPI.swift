@@ -30,6 +30,7 @@ extension ProtocolsAPI {
                     do {
                         if JSONSerialization.isValidJSONObject(json) {
                             let data = try JSONSerialization.data(withJSONObject: json, options: .sortedKeys)
+                            print(String(bytes: data, encoding: .utf8)!)
                             let status =  try CurrentStatus(data: data)
                             completion(nil, status)
                         }

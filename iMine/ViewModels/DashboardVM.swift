@@ -34,6 +34,7 @@ struct DashboardVM {
         return Date() > date.addingTimeInterval(60) || nil == currentStatus
     }
     
+    // Dashboard
     var current: String? {
         guard let currentHashrate = currentStatus.parameter?.currentHashrate else { return "0.0" }
         return String(format: "%0.2f", currentHashrate / 1000000)
@@ -117,8 +118,63 @@ struct DashboardVM {
         }
         return color
     }
+    
+    // Summary
+    var earningsDay: String {
+        guard let usd = currentStatus.parameter?.usdPerMin else { return "0.0" }
+        let value = usd * 60 * 24
+        return currencyFromValue(value)
+    }
+    
+    var earningsWeek: String {
+        guard let usd = currentStatus.parameter?.usdPerMin else { return "0.0" }
+        let value = usd * 60 * 24 * 7
+        return currencyFromValue(value)
+    }
+    
+    var earningsMonth: String {
+        guard let usd = currentStatus.parameter?.usdPerMin else { return "0.0" }
+        let value = usd * 60 * 24 * 30
+        return currencyFromValue(value)
+    }
+    
+    var earningsYear: String {
+        guard let usd = currentStatus.parameter?.usdPerMin else { return "0.0" }
+        let value = usd * 60 * 24 * 365
+        return currencyFromValue(value)
+    }
+    
+    var unpaid: String {
+        guard let units = currentStatus.parameter?.unpaid else { return "0.0" }
+        let value =  units / 10e17
+        return String(format: "%0.8f", value)
+    }
+    
+    var workers: String {
+        guard let workers = currentStatus.parameter?.activeWorkers else { return "0" }
+        let value = Int(workers)
+        return "\(value)"
+    }
+    
+    var invalid: String {
+        guard let value = currentStatus.parameter?.invalidShares else { return "0" }
+        return "\(value)"
+    }
+    
+    var stale: String {
+        guard let value = currentStatus.parameter?.staleShares else { return "0" }
+        return "\(value)"
+    }
 }
 
 extension DashboardVM: ProtocolsAPI {
-    
+    func currencyFromValue(_ value: Double) -> String {
+        let currencyFormatter = NumberFormatter()
+        currencyFormatter.usesGroupingSeparator = true
+        currencyFormatter.numberStyle = .currency
+        // localize to your grouping and decimal separator
+        currencyFormatter.locale = Locale(identifier: "us_US")
+        let priceString = currencyFormatter.string(from: NSNumber(value: value))!
+        return priceString
+    }
 }
