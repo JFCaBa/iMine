@@ -43,7 +43,7 @@ class ReportsVC: UIViewController {
     
     fileprivate func populateData() {
         let vc = storyboard?.instantiateViewController(withIdentifier: "GraphsPageVC") as! GraphsPageVC
-        vc.history = viewModel.history
+        vc.viewModel = viewModel
         self.addChildViewControllerWithView(vc, toView: container)
     }
     

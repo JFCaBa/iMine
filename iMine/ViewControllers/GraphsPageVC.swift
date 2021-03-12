@@ -11,10 +11,11 @@ import UIKit
 class GraphsPageVC: UIPageViewController {
     
     // MARK: - Ivars
-    public var history: [HistoryEntity]!
+    public var viewModel: ReportsVM!
+    public var payouts: [PayoutEntity]!
     private(set) lazy var orderedViewControllers: [UIViewController] = {
-        return [GraphReportsVC.customInit(title: "Hashrate", history: history, type: .hashrate),
-                GraphReportsVC.customInit(title: "Payouts", history: history, type: .payouts)]
+        return [GraphReportsVC.customInit(title: "Hashrate", viewModel: viewModel, type: .hashrate),
+                GraphReportsVC.customInit(title: "Payouts", viewModel: viewModel, type: .payouts)]
     }()
     
     // MARK: - Lifecycle

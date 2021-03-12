@@ -29,10 +29,10 @@ class GraphReportsVC: UIViewController {
     var viewModel: ReportsVM!
     
     // MARK: - Lifecycle
-    static func customInit(title: String, history: [HistoryEntity], type: GraphType) -> GraphReportsVC {
+    static func customInit(title: String, viewModel: ReportsVM, type: GraphType) -> GraphReportsVC {
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GraphReportsVC") as! GraphReportsVC
         vc.theTitle = title
-        vc.viewModel = ReportsVM(history: history)
+        vc.viewModel = viewModel
         vc.graphType = type
         return vc
     }
@@ -84,17 +84,9 @@ class GraphReportsVC: UIViewController {
     
     fileprivate func createPayoutsChart() {
         chart.removeAllSeries()
-        let actual = ChartSeries(viewModel.actual)
-        actual.color = ChartColors.yellowColor()
+        let actual = ChartSeries(viewModel.payout)
+        actual.color = UIColor.theBlue
         actual.area = true
-
-        let average = ChartSeries(viewModel.average)
-        average.color = ChartColors.redColor()
-        average.area = true
-
-        let reported = ChartSeries(viewModel.reported)
-        reported.color = ChartColors.purpleColor()
-
-        chart.add([actual, average, reported])
+        chart.add([actual])
     }
 }
