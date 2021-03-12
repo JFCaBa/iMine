@@ -8,4 +8,6 @@ target 'iMine' do
   # Pods for iMine
   pod 'Alamofire', '~> 5.2'
   pod 'MBProgressHUD', '~> 1.2.0'
+  pod 'SwiftChart'
+  pod 'ChartLegends'
 end

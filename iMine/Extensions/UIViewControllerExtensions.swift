@@ -13,7 +13,7 @@ extension UIViewController {
     /// Convenient fuction to open the User settings
     /// - Parameter sender: The same UIBarButtonItem tapped on the class
     func openUserSettings(_ sender: UIBarButtonItem) {
-        guard let vc = storyboard?.instantiateViewController(withIdentifier: "UserSettings") as? UserSettings else { return }
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "UserSettings") as? UserSettingsVC else { return }
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -48,5 +48,22 @@ extension UIViewController {
             self.view.isUserInteractionEnabled = true
             MBProgressHUD.hide(for: self.view, animated: true)
         }
+    }
+    
+    func addChildViewControllerWithView(_ childViewController: UIViewController, toView view: UIView? = nil) {
+        let view: UIView = view ?? self.view
+        childViewController.removeFromParent()
+        childViewController.willMove(toParent: self)
+        addChild(childViewController)
+        childViewController.didMove(toParent: self)
+        childViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(childViewController.view)
+        view.addConstraints([
+            NSLayoutConstraint(item: childViewController.view!, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: -10),
+            NSLayoutConstraint(item: childViewController.view!, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: childViewController.view!, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: childViewController.view!, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1, constant: 0)
+        ])
+        view.layoutIfNeeded()
     }
 }

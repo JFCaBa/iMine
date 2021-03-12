@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Summary: UIViewController {
+class SummaryVC: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var lblDay: UILabel!
     @IBOutlet weak var lblWeek: UILabel!
@@ -29,7 +29,7 @@ class Summary: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // Get the previous fetched data from the Dashboard controller
-        if let nv = tabBarController?.viewControllers?[0] as? UINavigationController, let dashboard = nv.viewControllers.first as? Dashboard {
+        if let nv = tabBarController?.viewControllers?[0] as? UINavigationController, let dashboard = nv.viewControllers.first as? DashboardVC {
             viewModel = dashboard.viewModel
             populateData()
         }

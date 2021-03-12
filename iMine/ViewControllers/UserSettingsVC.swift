@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UserSettings: UIViewController {
+class UserSettingsVC: UIViewController {
 
     // MARK: - Outlets
     @IBOutlet weak var txtWallet: UITextField!
@@ -54,7 +54,7 @@ class UserSettings: UIViewController {
     }
 }
 
-extension UserSettings: UITextFieldDelegate {
+extension UserSettingsVC: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         guard  let text = textField.text else {
             return

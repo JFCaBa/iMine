@@ -19,9 +19,9 @@
 import Foundation
 
 // MARK: - CurrentStatus
-struct CurrentStatus: Codable {
+struct StatusResponse: Codable {
     let status: String?
-    let parameter: Parameter?
+    let parameter: Status?
     
     enum CodingKeys: String, CodingKey {
         case status = "status"
@@ -29,11 +29,9 @@ struct CurrentStatus: Codable {
     }
 }
 
-// MARK: CurrentStatus convenience initializers and mutators
-
-extension CurrentStatus {
+extension StatusResponse {
     init(data: Data) throws {
-        self = try newJSONDecoder().decode(CurrentStatus.self, from: data)
+        self = try newJSONDecoder().decode(StatusResponse.self, from: data)
     }
 
     init(_ json: String, using encoding: String.Encoding = .utf8) throws {
@@ -44,14 +42,14 @@ extension CurrentStatus {
     }
 }
 
-// MARK: - Parameter
-struct Parameter: Codable {
+// MARK: - Status
+struct Status: Codable {
     let time, lastSeen, reportedHashrate, currentHashrate, validShares, invalidShares, staleShares, averageHashrate, activeWorkers, unpaid, unconfirmed, coinsPerMin, usdPerMin, btcPerMin: Double?
 }
 
-extension Parameter {
+extension Status {
     init(data: Data) throws {
-        self = try newJSONDecoder().decode(Parameter.self, from: data)
+        self = try newJSONDecoder().decode(Status.self, from: data)
     }
 
     init(_ json: String, using encoding: String.Encoding = .utf8) throws {
@@ -64,7 +62,6 @@ extension Parameter {
 
 
 // MARK: - Helper functions for creating encoders and decoders
-
 func newJSONDecoder() -> JSONDecoder {
     let decoder = JSONDecoder()
     if #available(iOS 10.0, OSX 10.12, tvOS 10.0, watchOS 3.0, *) {

@@ -11,7 +11,7 @@ struct DashboardVM {
     
     var wallet: String!
     
-    var currentStatus: CurrentStatus! {
+    var currentStatus: StatusResponse! {
         willSet {
             // Store the actual values before to update for comparison
             previousCurrentStatus = currentStatus
@@ -24,7 +24,7 @@ struct DashboardVM {
     }
     
     // Need to store the previous status to draw and color the up/down/equal indicators
-    var previousCurrentStatus: CurrentStatus!
+    var previousCurrentStatus: StatusResponse!
     
     /// The API updates the values every 6 minutes, makes no sense to call and get the same values than the last time
     var canFetchData: Bool {
@@ -165,9 +165,7 @@ struct DashboardVM {
         guard let value = currentStatus.parameter?.staleShares else { return "0" }
         return "\(value)"
     }
-}
-
-extension DashboardVM: ProtocolsAPI {
+    
     func currencyFromValue(_ value: Double) -> String {
         let currencyFormatter = NumberFormatter()
         currencyFormatter.usesGroupingSeparator = true
@@ -177,4 +175,8 @@ extension DashboardVM: ProtocolsAPI {
         let priceString = currencyFormatter.string(from: NSNumber(value: value))!
         return priceString
     }
+}
+
+extension DashboardVM: ProtocolsAPI {
+
 }

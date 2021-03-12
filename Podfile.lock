@@ -1,20 +1,28 @@
 PODS:
   - Alamofire (5.4.1)
+  - ChartLegends (0.0.6)
   - MBProgressHUD (1.2.0)
+  - SwiftChart (1.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
+  - ChartLegends
   - MBProgressHUD (~> 1.2.0)
+  - SwiftChart
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - ChartLegends
     - MBProgressHUD
+    - SwiftChart
 
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  ChartLegends: bd0b58d74772f35dc14fc6a3ff245cccf3204a59
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  SwiftChart: ba767a678d568a5ee22d419e146a0582865e1aff
 
-PODFILE CHECKSUM: e1d8561a8cd1651628f34f195407e879487f04df
+PODFILE CHECKSUM: cf5d1dda1811e20054fabb80708d446fe77a6fff
 
 COCOAPODS: 1.10.0.rc.1

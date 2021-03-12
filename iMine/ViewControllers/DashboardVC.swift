@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Dashboard: UIViewController {
+class DashboardVC: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var lblCurrent: UILabel!
     @IBOutlet weak var lblAverage: UILabel!
