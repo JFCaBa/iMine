@@ -16,6 +16,7 @@ extension UserDefaults {
         static let wallet = "USER_WALLET"
         static let lastFetch = "LAST_FETCH_DATA"
         static let previousCurrentStatus = "PREVIOUS_CURRENT_STATUS"
+        static let fetchData = "FETCH_DATA"
     }
     
     enum images {

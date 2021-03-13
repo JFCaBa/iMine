@@ -28,12 +28,14 @@ class DashboardVC: UIViewController {
     // MARK: - lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(shouldFetchData), name: NSNotification.Name(rawValue: UserDefaults.keys.fetchData), object: nil)
         setupUI()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         loadData()
+    }
+
+    // MARK: - Notifications
+    @objc func shouldFetchData() {
+        loadData(spinner: false)
     }
     
     // MARK: - Actions
@@ -77,7 +79,7 @@ class DashboardVC: UIViewController {
         imgAverage.tintColor  = viewModel.averageImageTintColor
     }
     
-    private func loadData() {
+    private func loadData(spinner: Bool = true) {
         guard let wallet = UserDefaults.standard.value(forKey: UserDefaults.keys.wallet) as? String else {
             openUserSettings(btnUserSettings)
             return
@@ -85,7 +87,9 @@ class DashboardVC: UIViewController {
         viewModel.wallet = wallet
         if viewModel.canFetchData == false { return }
         // Fetch the data
-        showIndicator()
+        if spinner {
+            showIndicator()
+        }
         viewModel.getStatus {  [weak self] error, status in
             self?.hideIndicator()
             if let error = error {

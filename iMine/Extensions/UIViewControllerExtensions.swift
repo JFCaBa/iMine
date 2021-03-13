@@ -50,9 +50,11 @@ extension UIViewController {
         }
     }
     
+    // MARK: - UI stuff
     func addChildViewControllerWithView(_ childViewController: UIViewController, toView view: UIView? = nil) {
         let view: UIView = view ?? self.view
         childViewController.removeFromParent()
+        childViewController.view.removeFromSuperview()
         childViewController.willMove(toParent: self)
         addChild(childViewController)
         childViewController.didMove(toParent: self)
@@ -64,6 +66,15 @@ extension UIViewController {
             NSLayoutConstraint(item: childViewController.view!, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 0),
             NSLayoutConstraint(item: childViewController.view!, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1, constant: 0)
         ])
+        view.layoutIfNeeded()
+    }
+    
+    func removeChildViewController(_ childViewController: UIViewController) {
+        childViewController.removeFromParent()
+        childViewController.willMove(toParent: nil)
+        childViewController.removeFromParent()
+        childViewController.didMove(toParent: nil)
+        childViewController.view.removeFromSuperview()
         view.layoutIfNeeded()
     }
 }

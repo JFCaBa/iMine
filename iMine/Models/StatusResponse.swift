@@ -44,7 +44,8 @@ extension StatusResponse {
 
 // MARK: - Status
 struct Status: Codable {
-    let time, lastSeen, reportedHashrate, currentHashrate, validShares, invalidShares, staleShares, averageHashrate, activeWorkers, unpaid, unconfirmed, coinsPerMin, usdPerMin, btcPerMin: Double?
+    let time, lastSeen, reportedHashrate, currentHashrate, validShares, averageHashrate, activeWorkers, unpaid, unconfirmed, coinsPerMin, usdPerMin, btcPerMin: Double?
+    let staleShares, invalidShares: Int?
 }
 
 extension Status {

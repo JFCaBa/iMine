@@ -50,6 +50,11 @@ class GraphReportsVC: UIViewController {
         createChart()
     }
     
+    // MARK: - Public
+    public func updateChart() {
+        createChart()
+    }
+    
     // MARK: - Private
     fileprivate func createChart() {
         switch graphType {

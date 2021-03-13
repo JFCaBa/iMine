@@ -16,9 +16,15 @@ class ReportsVC: UIViewController {
     // MARK: - lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(shouldFetchData), name: NSNotification.Name(rawValue: UserDefaults.keys.fetchData), object: nil)
         assignWallet()
         setupUI()
         loadData()
+    }
+    
+    // MARK: - Notifications
+    @objc func shouldFetchData() {
+        loadData(spinner: false)
     }
     
     // MARK: - Actions
@@ -27,7 +33,6 @@ class ReportsVC: UIViewController {
     }
     
     // MARK: - Private
-    
     /// The wallet is in the viewModel of the first ViewController, retrieve it to be used here
     fileprivate func assignWallet() {
         // Get the previous fetched data from the Dashboard controller
@@ -48,14 +53,16 @@ class ReportsVC: UIViewController {
     }
     
     /// Using Dispatchgroup to join the two calls to the API
-    fileprivate func loadData() {
+    fileprivate func loadData(spinner: Bool = true) {
         guard viewModel.wallet != nil else {
             return
         }
         
         let group = DispatchGroup()
         // Fetch the data
-        showIndicator()
+        if spinner {
+            showIndicator()
+        }
         group.enter()
         viewModel.getHistory { [weak self] error, response in
             if let error = error {

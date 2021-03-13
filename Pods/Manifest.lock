@@ -1,12 +1,14 @@
 PODS:
   - Alamofire (5.4.1)
   - ChartLegends (0.0.6)
+  - IQKeyboardManager (6.5.6)
   - MBProgressHUD (1.2.0)
   - SwiftChart (1.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
   - ChartLegends
+  - IQKeyboardManager
   - MBProgressHUD (~> 1.2.0)
   - SwiftChart
 
@@ -14,15 +16,17 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - ChartLegends
+    - IQKeyboardManager
     - MBProgressHUD
     - SwiftChart
 
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
   ChartLegends: bd0b58d74772f35dc14fc6a3ff245cccf3204a59
+  IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   SwiftChart: ba767a678d568a5ee22d419e146a0582865e1aff
 
-PODFILE CHECKSUM: cf5d1dda1811e20054fabb80708d446fe77a6fff
+PODFILE CHECKSUM: f67815ccc0f314481bb9c9101b2595ef6a5dc2a6
 
 COCOAPODS: 1.10.0.rc.1
