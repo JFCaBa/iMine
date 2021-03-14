@@ -16,11 +16,61 @@
 			<key>DefaultValue</key>
 			<false/>
 		</dict>
+        <dict>
+            <key>Type</key>
+            <string>PSToggleSwitchSpecifier</string>
+            <key>Title</key>
+            <string></string>
+            <key>Key</key>
+            <string>MIN_EARNINGS_SWITCH</string>
+            <key>DefaultValue</key>
+            <false/>
+        </dict>
+        <dict>
+            <key>Type</key>
+            <string>PSToggleSwitchSpecifier</string>
+            <key>Title</key>
+            <string></string>
+            <key>Key</key>
+            <string>MAX_EARNINGS_SWITCH</string>
+            <key>DefaultValue</key>
+            <false/>
+        </dict>
+        <dict>
+            <key>Type</key>
+            <string>PSToggleSwitchSpecifier</string>
+            <key>Title</key>
+            <string></string>
+            <key>Key</key>
+            <string>MAX_UNPAID_SWITCH</string>
+            <key>DefaultValue</key>
+            <false/>
+        </dict>
+        <dict>
+            <key>Type</key>
+            <string>PSToggleSwitchSpecifier</string>
+            <key>Title</key>
+            <string></string>
+            <key>Key</key>
+            <string>MAX_FAN_SPEED_SWITCH</string>
+            <key>DefaultValue</key>
+            <false/>
+        </dict>
+        <dict>
+            <key>Type</key>
+            <string>PSToggleSwitchSpecifier</string>
+            <key>Title</key>
+            <string></string>
+            <key>Key</key>
+            <string>MAX_TEMP_SWITCH</string>
+            <key>DefaultValue</key>
+            <false/>
+        </dict>
 		<dict>
 			<key>Type</key>
 			<string>PSTextFieldSpecifier</string>
 			<key>Title</key>
-			<string>Min hash rate</string>
+			<string>Min Hashrate</string>
 			<key>Key</key>
 			<string>MIN_HASHRATE_VALUE</string>
 			<key>DefaultValue</key>
@@ -34,6 +84,92 @@
 			<key>AutocorrectionType</key>
 			<string>No</string>
 		</dict>
+        <dict>
+            <key>Type</key>
+            <string>PSTextFieldSpecifier</string>
+            <key>Title</key>
+            <string>Min Earnings</string>
+            <key>Key</key>
+            <string>MIN_EARNINGS_VALUE</string>
+            <key>DefaultValue</key>
+            <string>0</string>
+            <key>IsSecure</key>
+            <false/>
+            <key>KeyboardType</key>
+            <string>NumbersAndPunctuation</string>
+            <key>AutocapitalizationType</key>
+            <string>None</string>
+            <key>AutocorrectionType</key>
+            <string>No</string>
+        </dict><dict>
+            <key>Type</key>
+            <string>PSTextFieldSpecifier</string>
+            <key>Title</key>
+            <string>Max Earnings</string>
+            <key>Key</key>
+            <string>MAX_EARNINGS_VALUE</string>
+            <key>DefaultValue</key>
+            <string>0</string>
+            <key>IsSecure</key>
+            <false/>
+            <key>KeyboardType</key>
+            <string>NumbersAndPunctuation</string>
+            <key>AutocapitalizationType</key>
+            <string>None</string>
+            <key>AutocorrectionType</key>
+            <string>No</string>
+        </dict><dict>
+            <key>Type</key>
+            <string>PSTextFieldSpecifier</string>
+            <key>Title</key>
+            <string>Max Unpaid</string>
+            <key>Key</key>
+            <string>MAX_UNPAID_VALUE</string>
+            <key>DefaultValue</key>
+            <string>0</string>
+            <key>IsSecure</key>
+            <false/>
+            <key>KeyboardType</key>
+            <string>NumbersAndPunctuation</string>
+            <key>AutocapitalizationType</key>
+            <string>None</string>
+            <key>AutocorrectionType</key>
+            <string>No</string>
+        </dict><dict>
+            <key>Type</key>
+            <string>PSTextFieldSpecifier</string>
+            <key>Title</key>
+            <string>Max Fan Speed</string>
+            <key>Key</key>
+            <string>MAX_FAN_SPEED_VALUE</string>
+            <key>DefaultValue</key>
+            <string>0</string>
+            <key>IsSecure</key>
+            <false/>
+            <key>KeyboardType</key>
+            <string>NumbersAndPunctuation</string>
+            <key>AutocapitalizationType</key>
+            <string>None</string>
+            <key>AutocorrectionType</key>
+            <string>No</string>
+        </dict><dict>
+            <key>Type</key>
+            <string>PSTextFieldSpecifier</string>
+            <key>Title</key>
+            <string>Max Temp</string>
+            <key>Key</key>
+            <string>MAX_TEMP_VALUE</string>
+            <key>DefaultValue</key>
+            <string>0</string>
+            <key>IsSecure</key>
+            <false/>
+            <key>KeyboardType</key>
+            <string>NumbersAndPunctuation</string>
+            <key>AutocapitalizationType</key>
+            <string>None</string>
+            <key>AutocorrectionType</key>
+            <string>No</string>
+        </dict>
 	</array>
 </dict>
 </plist>

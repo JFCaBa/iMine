@@ -84,22 +84,50 @@ class DashboardVC: UIViewController {
             openUserSettings(btnUserSettings)
             return
         }
+        // The viewModel needs the wallet to fetch the pool data
         viewModel.wallet = wallet
+        
+        // Dont allow the user to reload the data and abuse of this service
         if viewModel.canFetchData == false { return }
+        
+        // Use dispatch group to link the two async calls
+        let group = DispatchGroup()
+        
         // Fetch the data
         if spinner {
             showIndicator()
         }
+        
+        // Status
+        group.enter()
         viewModel.getStatus {  [weak self] error, status in
-            self?.hideIndicator()
             if let error = error {
                 print(error)
                 self?.showError(error.localizedDescription)
             }
             else if let status = status {
                 self?.viewModel.currentStatus = status
-                self?.populateData()
             }
+            group.leave()
+        }
+        
+        // ETH price
+        group.enter()
+        viewModel.getETHPrice { [weak self] error, value in
+            if let error = error {
+                print(error)
+                self?.showError(error.localizedDescription)
+            }
+            else if let value = value {
+                self?.viewModel.ethValue = value
+            }
+            group.leave()
+        }
+        
+        // API calls did finish, do the tasks in common
+        group.notify(queue: .main) {
+            self.hideIndicator()
+            self.populateData()
         }
     }
 }

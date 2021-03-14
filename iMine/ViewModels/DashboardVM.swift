@@ -26,6 +26,8 @@ struct DashboardVM {
     // Need to store the previous status to draw and color the up/down/equal indicators
     var previousCurrentStatus: StatusResponse!
     
+    var ethValue: ETHValue!
+    
     /// The API updates the values every 6 minutes, makes no sense to call and get the same values than the last time
     var canFetchData: Bool {
         guard let date = UserDefaults.standard.object(forKey: UserDefaults.keys.lastFetch) as? Date else {
@@ -145,9 +147,9 @@ struct DashboardVM {
     }
     
     var unpaid: String {
-        guard let units = currentStatus.parameter?.unpaid else { return "0.0" }
-        let value =  units / 10e17
-        return String(format: "%0.8f", value)
+        guard let units = currentStatus.parameter?.unpaid, let eth = ethValue, let amount = Double(eth.amount) else { return "0.0" }
+        let value =  (units / 10e17) * amount
+        return currencyFromValue(value)
     }
     
     var workers: String {
@@ -170,6 +172,8 @@ struct DashboardVM {
         let currencyFormatter = NumberFormatter()
         currencyFormatter.usesGroupingSeparator = true
         currencyFormatter.numberStyle = .currency
+        currencyFormatter.groupingSeparator = ","
+        currencyFormatter.groupingSize = 3
         // localize to your grouping and decimal separator
         currencyFormatter.locale = Locale(identifier: "us_US")
         let priceString = currencyFormatter.string(from: NSNumber(value: value))!

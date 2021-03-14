@@ -16,6 +16,7 @@
 		A100E84225FCC2E500A06F31 /* LandingTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100E84125FCC2E500A06F31 /* LandingTabBarController.swift */; };
 		A100E85425FCD24800A06F31 /* AlarmsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100E85325FCD24800A06F31 /* AlarmsVC.swift */; };
 		A100E86525FCD97200A06F31 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A100E86425FCD97200A06F31 /* Settings.bundle */; };
+		A11DDF7225FE1D7B00C66490 /* ETHPriceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11DDF7125FE1D7B00C66490 /* ETHPriceResponse.swift */; };
 		A15D9B4F25F8C3EC000A8AD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15D9B4E25F8C3EC000A8AD8 /* AppDelegate.swift */; };
 		A15D9B5125F8C3EC000A8AD8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15D9B5025F8C3EC000A8AD8 /* SceneDelegate.swift */; };
 		A15D9B5325F8C3EC000A8AD8 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15D9B5225F8C3EC000A8AD8 /* DashboardVC.swift */; };
@@ -45,6 +46,7 @@
 		A100E84125FCC2E500A06F31 /* LandingTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingTabBarController.swift; sourceTree = "<group>"; };
 		A100E85325FCD24800A06F31 /* AlarmsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmsVC.swift; sourceTree = "<group>"; };
 		A100E86425FCD97200A06F31 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		A11DDF7125FE1D7B00C66490 /* ETHPriceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETHPriceResponse.swift; sourceTree = "<group>"; };
 		A15D9B4B25F8C3EC000A8AD8 /* iMine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A15D9B4E25F8C3EC000A8AD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A15D9B5025F8C3EC000A8AD8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				A15D9B6425F8C420000A8AD8 /* StatusResponse.swift */,
 				A100E80925FB65EE00A06F31 /* HistoryResponse.swift */,
 				A100E81D25FB8CEF00A06F31 /* PayoutsResponse.swift */,
+				A11DDF7125FE1D7B00C66490 /* ETHPriceResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				A15D9B7325F8CD48000A8AD8 /* ProtocolsAPI.swift in Sources */,
 				A15D9B5325F8C3EC000A8AD8 /* DashboardVC.swift in Sources */,
 				A100E80725FB620F00A06F31 /* ReportsVM.swift in Sources */,
+				A11DDF7225FE1D7B00C66490 /* ETHPriceResponse.swift in Sources */,
 				A15D9BA525F8FC0A000A8AD8 /* UIColorExtensions.swift in Sources */,
 				A15D9B6525F8C420000A8AD8 /* StatusResponse.swift in Sources */,
 				A100E84225FCC2E500A06F31 /* LandingTabBarController.swift in Sources */,

@@ -107,6 +107,32 @@ extension ProtocolsAPI {
             }
         }
     }
+    
+    func getETHPrice(completion: @escaping (Error?, ETHValue?)-> ()) {
+        let url = "https://api.coinbase.com/v2/prices/eth-usd/sell"
+        AF.request(url).responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                if let json = value as? [String: Any] {
+                    do {
+                        if JSONSerialization.isValidJSONObject(json) {
+                            let data = try JSONSerialization.data(withJSONObject: json, options: .sortedKeys)
+                            print(String(bytes: data, encoding: .utf8)!)
+                            let value =  try ETHPriceResponse(data: data)
+                            completion(nil, value.data)
+                        }
+                    }
+                    catch let error as NSError {
+                        print(error.localizedDescription)
+                        completion(error, nil)
+                    }
+                }
+            case .failure(let error):
+                print(error)
+                completion(error, nil)
+            }
+        }
+    }
 
     
     func isValidWalletAddress() -> Bool {

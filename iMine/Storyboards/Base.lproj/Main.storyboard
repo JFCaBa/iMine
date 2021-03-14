@@ -604,7 +604,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="BEz-Ki-RWp">
                                                 <rect key="frame" x="0.0" y="69.5" width="354" height="29"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unpaid ETH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUk-0D-rrf">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unpaid" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUk-0D-rrf">
                                                         <rect key="frame" x="0.0" y="0.0" width="177" height="29"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                                         <nil key="textColor"/>
@@ -674,10 +674,10 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="MLr-UG-0JU">
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MLr-UG-0JU">
                                                 <rect key="frame" x="0.0" y="40.5" width="374" height="31"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Min hash rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQ5-dj-EdU">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Min hash rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fQ5-dj-EdU">
                                                         <rect key="frame" x="0.0" y="0.0" width="158" height="31"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="110" id="33M-hW-GAn"/>
@@ -686,8 +686,8 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="MIN_HASHRATE_VALUE" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1FX-fq-O60">
-                                                        <rect key="frame" x="178" y="0.0" width="127" height="31"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="MIN_HASHRATE_VALUE" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="MH/s" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1FX-fq-O60">
+                                                        <rect key="frame" x="168" y="0.0" width="147" height="31"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     </textField>
@@ -699,60 +699,69 @@
                                                     </switch>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wuC-Gi-nLI">
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wuC-Gi-nLI">
                                                 <rect key="frame" x="0.0" y="91.5" width="374" height="31"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Min earnings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ce-Zb-t4S">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Min earnings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8Ce-Zb-t4S">
                                                         <rect key="frame" x="0.0" y="0.0" width="158" height="31"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gfu-Ub-Gd4">
-                                                        <rect key="frame" x="178" y="0.0" width="127" height="31"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="MIN_EARNINGS_VALUE" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$/hour" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gfu-Ub-Gd4">
+                                                        <rect key="frame" x="168" y="0.0" width="147" height="31"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     </textField>
-                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Wdj-DU-87A">
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" restorationIdentifier="MIN_EARNINGS_SWITCH" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Wdj-DU-87A">
                                                         <rect key="frame" x="325" y="0.0" width="51" height="31"/>
+                                                        <connections>
+                                                            <action selector="switchDidChange:" destination="fhv-4e-Rve" eventType="valueChanged" id="cu4-7k-fJs"/>
+                                                        </connections>
                                                     </switch>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="s6B-EG-dis">
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="s6B-EG-dis">
                                                 <rect key="frame" x="0.0" y="142.5" width="374" height="31"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max earnings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Kl-TM-bwQ">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max earnings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6Kl-TM-bwQ">
                                                         <rect key="frame" x="0.0" y="0.0" width="158" height="31"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kh8-ga-vAc">
-                                                        <rect key="frame" x="178" y="0.0" width="127" height="31"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="MAX_EARNINGS_VALUE" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$/hour" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kh8-ga-vAc">
+                                                        <rect key="frame" x="168" y="0.0" width="147" height="31"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     </textField>
-                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RRP-QO-UeO">
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" restorationIdentifier="MAX_EARNINGS_SWITCH" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RRP-QO-UeO">
                                                         <rect key="frame" x="325" y="0.0" width="51" height="31"/>
+                                                        <connections>
+                                                            <action selector="switchDidChange:" destination="fhv-4e-Rve" eventType="valueChanged" id="Fi0-bd-SNS"/>
+                                                        </connections>
                                                     </switch>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="KGJ-Cs-ak1">
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KGJ-Cs-ak1">
                                                 <rect key="frame" x="0.0" y="193.5" width="374" height="31"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unpaid" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bv9-r6-yFV">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unpaid" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bv9-r6-yFV">
                                                         <rect key="frame" x="0.0" y="0.0" width="158" height="31"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0fU-gd-Gs6">
-                                                        <rect key="frame" x="178" y="0.0" width="127" height="31"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="MAX_UNPAID_VALUE" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0fU-gd-Gs6">
+                                                        <rect key="frame" x="168" y="0.0" width="147" height="31"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     </textField>
-                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="64B-v1-8Fv">
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" restorationIdentifier="MAX_UNPAID_SWITCH" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="64B-v1-8Fv">
                                                         <rect key="frame" x="325" y="0.0" width="51" height="31"/>
+                                                        <connections>
+                                                            <action selector="switchDidChange:" destination="fhv-4e-Rve" eventType="valueChanged" id="yFH-A5-iTW"/>
+                                                        </connections>
                                                     </switch>
                                                 </subviews>
                                             </stackView>
@@ -775,7 +784,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mqK-CV-aLI">
                                                 <rect key="frame" x="0.0" y="40.5" width="374" height="31"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max fan speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x6L-9O-IOs">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max fan speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="x6L-9O-IOs">
                                                         <rect key="frame" x="0.0" y="0.0" width="158" height="31"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="110" id="VCf-tV-ofA"/>
@@ -784,32 +793,38 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dr0-Av-OjD">
+                                                    <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="MAX_FAN_SPEED_VALUE" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="r.p.m." textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dr0-Av-OjD">
                                                         <rect key="frame" x="178" y="0.0" width="127" height="31"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     </textField>
-                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="VgG-K0-xZk">
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" restorationIdentifier="MAX_FAN_SPEED_SWITCH" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="VgG-K0-xZk">
                                                         <rect key="frame" x="325" y="0.0" width="51" height="31"/>
+                                                        <connections>
+                                                            <action selector="switchDidChange:" destination="fhv-4e-Rve" eventType="valueChanged" id="3es-P5-yRs"/>
+                                                        </connections>
                                                     </switch>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="INf-Da-6KT">
                                                 <rect key="frame" x="0.0" y="91.5" width="374" height="31"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max temp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5P-nR-N2Y">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max temp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="c5P-nR-N2Y">
                                                         <rect key="frame" x="0.0" y="0.0" width="158" height="31"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="enI-xK-dtA">
+                                                    <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="MAX_TEMP_VALUE" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="º C" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="enI-xK-dtA">
                                                         <rect key="frame" x="178" y="0.0" width="127" height="31"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     </textField>
-                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="m39-uc-jdu">
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" restorationIdentifier="MAX_TEMP_SWITCH" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="m39-uc-jdu">
                                                         <rect key="frame" x="325" y="0.0" width="51" height="31"/>
+                                                        <connections>
+                                                            <action selector="switchDidChange:" destination="fhv-4e-Rve" eventType="valueChanged" id="7Sf-2m-cBw"/>
+                                                        </connections>
                                                     </switch>
                                                 </subviews>
                                             </stackView>
@@ -832,7 +847,17 @@
                     </view>
                     <navigationItem key="navigationItem" title="Alarms" id="UoZ-we-pJL"/>
                     <connections>
+                        <outlet property="switchMaxEarnings" destination="RRP-QO-UeO" id="Knj-pa-ty5"/>
+                        <outlet property="switchMaxFanSpeed" destination="VgG-K0-xZk" id="F8D-za-d06"/>
+                        <outlet property="switchMaxTemp" destination="m39-uc-jdu" id="V7e-Vz-ceX"/>
+                        <outlet property="switchMaxUpaid" destination="64B-v1-8Fv" id="Cem-bJ-cZ5"/>
+                        <outlet property="switchMinEarnings" destination="Wdj-DU-87A" id="F2h-bH-HAW"/>
                         <outlet property="switchMinHashrate" destination="ihi-eB-YjL" id="Q62-TV-SkY"/>
+                        <outlet property="txtMaxEarnings" destination="kh8-ga-vAc" id="yvd-CU-Vni"/>
+                        <outlet property="txtMaxFanSpeed" destination="Dr0-Av-OjD" id="osu-pG-o5f"/>
+                        <outlet property="txtMaxTemp" destination="enI-xK-dtA" id="ZoY-ih-R3b"/>
+                        <outlet property="txtMaxUnpaid" destination="0fU-gd-Gs6" id="PtO-od-irH"/>
+                        <outlet property="txtMinEarnings" destination="gfu-Ub-Gd4" id="QgK-J1-I7b"/>
                         <outlet property="txtMinHashrate" destination="1FX-fq-O60" id="VF7-Dw-fUK"/>
                     </connections>
                 </viewController>
@@ -844,7 +869,7 @@
         <scene sceneID="lma-Pz-DT3">
             <objects>
                 <navigationController title="Summary" automaticallyAdjustsScrollViewInsets="NO" id="RpN-GZ-M9k" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Summary" image="newspaper" catalog="system" selectedImage="newspaper" id="6Vi-DO-3Ah"/>
+                    <tabBarItem key="tabBarItem" title="Summary" image="newspaper" catalog="system" id="6Vi-DO-3Ah"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="68U-DK-Jg7">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
